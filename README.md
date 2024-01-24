@@ -6,3 +6,20 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+pop-new-card
+pop-browse
+header - pop-user-set - pop-exit
+main - column (-card)
+
+column
+cards
+card
+
+categories
+pop-user-set
+checkbox
+button
+pop-exit
+
