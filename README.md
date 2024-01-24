@@ -10,7 +10,8 @@ Currently, two official plugins are available:
 
 pop-new-card
 pop-browse
-header - pop-user-set - pop-exit
+pop-exit
+header - pop-user-set
 main - column (-card)
 
 column
