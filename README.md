@@ -8,10 +8,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-pop-new-card +
-pop-browse
-pop-exit +
-header - pop-user-set +
-main - column (-card)
-
 

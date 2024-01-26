@@ -1,25 +1,44 @@
-import './PopNewCard.css'
 
-function RenderPopNewCard () {
- return <div className="pop-new-card" id="popNewCard">
-        <div className="pop-new-card__container">
-            <div className="pop-new-card__block">
-                <div className="pop-new-card__content">
-                    <h3 className="pop-new-card__ttl">Создание задачи</h3>
-                    <a href="#" className="pop-new-card__close">&#10006;</a>
-                    <div className="pop-new-card__wrap">
-                        <form className="pop-new-card__form form-new" id="formNewCard" action="#">
-                            <div className="form-new__block">
-                                <label htmlFor="formTitle" className="subttl">Название задачи</label>
-                                <input className="form-new__input" type="text" name="name" id="formTitle" placeholder="Введите название задачи..." autoFocus></input>
+function PopBrowse() {
+    return (<div className="pop-browse" id="popBrowse">
+        <div className="pop-browse__container">
+            <div className="pop-browse__block">
+                <div className="pop-browse__content">
+                    <div className="pop-browse__top-block">
+                        <h3 className="pop-browse__ttl">Название задачи</h3>
+                        <div className="categories__theme theme-top _orange _active-category">
+                            <p className="_orange">Web Design</p>
+                        </div>
+                    </div>
+                    <div className="pop-browse__status status">
+                        <p className="status__p subttl">Статус</p>
+                        <div className="status__themes">
+                            <div className="status__theme _hide">
+                                <p>Без статуса</p>
                             </div>
-                            <div className="form-new__block">
-                                <label htmlFor="textArea" className="subttl">Описание задачи</label>
-                                <textarea className="form-new__area" name="text" id="textArea"  placeholder="Введите описание задачи..."></textarea>
+                            <div className="status__theme _gray">
+                                <p className="_gray">Нужно сделать</p>
+                            </div>
+                            <div className="status__theme _hide">
+                                <p>В работе</p>
+                            </div>
+                            <div className="status__theme _hide">
+                                <p>Тестирование</p>
+                            </div>
+                            <div className="status__theme _hide">
+                                <p>Готово</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pop-browse__wrap">
+                        <form className="pop-browse__form form-browse" id="formBrowseCard" action="#">
+                            <div className="form-browse__block">
+                                <label htmlFor="textArea01" className="subttl">Описание задачи</label>
+                                <textarea className="form-browse__area" name="text" id="textArea01" readOnly placeholder="Введите описание задачи..."></textarea>
                             </div>
                         </form>
                         <div className="pop-new-card__calendar calendar">
-                            <p className="calendar__ttl subttl">Даты</p>									
+                            <p className="calendar__ttl subttl">Даты</p>
                             <div className="calendar__block">
                                 <div className="calendar__nav">
                                     <div className="calendar__month">Сентябрь 2023</div>
@@ -59,7 +78,7 @@ function RenderPopNewCard () {
                                         <div className="calendar__cell _cell-day ">6</div>
                                         <div className="calendar__cell _cell-day">7</div>
                                         <div className="calendar__cell _cell-day _current">8</div>
-                                        <div className="calendar__cell _cell-day _weekend">9</div>
+                                        <div className="calendar__cell _cell-day _weekend _active-day">9</div>
                                         <div className="calendar__cell _cell-day _weekend">10</div>
                                         <div className="calendar__cell _cell-day">11</div>
                                         <div className="calendar__cell _cell-day">12</div>
@@ -84,33 +103,41 @@ function RenderPopNewCard () {
                                         <div className="calendar__cell _other-month _weekend">1</div>
                                     </div>
                                 </div>
-                                
+
                                 <input type="hidden" id="datepick_value" value="08.09.2023"></input>
                                 <div className="calendar__period">
-                                    <p className="calendar__p date-end">Выберите срок исполнения <span className="date-control"></span>.</p>
+                                    <p className="calendar__p date-end">Срок исполнения: <span className="date-control">09.09.23</span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="pop-new-card__categories categories">
+                    <div className="theme-down__categories theme-down">
                         <p className="categories__p subttl">Категория</p>
-                        <div className="categories__themes">
-                            <div className="categories__theme _orange _active-category">
-                                <p className="_orange">Web Design</p>
-                            </div>
-                            <div className="categories__theme _green">
-                                <p className="_green">Research</p>
-                            </div>
-                            <div className="categories__theme _purple">
-                                <p className="_purple">Copywriting</p>
-                            </div>
+                        <div className="categories__theme _orange _active-category">
+                            <p className="_orange">Web Design</p>
                         </div>
                     </div>
-                    <button className="form-new__create _hover01" id="btnCreate">Создать задачу</button>
+                    <div className="pop-browse__btn-browse ">
+                        <div className="btn-group">
+                            <button className="btn-browse__edit _btn-bor _hover03"><a href="#">Редактировать задачу</a></button>
+                            <button className="btn-browse__delete _btn-bor _hover03"><a href="#">Удалить задачу</a></button>
+                        </div>
+                        <button className="btn-browse__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
+                    </div>
+                    <div className="pop-browse__btn-edit _hide">
+                        <div className="btn-group">
+                            <button className="btn-edit__edit _btn-bg _hover01"><a href="#">Сохранить</a></button>
+                            <button className="btn-edit__edit _btn-bor _hover03"><a href="#">Отменить</a></button>
+                            <button className="btn-edit__delete _btn-bor _hover03" id="btnDelete"><a href="#">Удалить задачу</a></button>
+                        </div>
+                        <button className="btn-edit__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    )
 }
 
-export default RenderPopNewCard
+export default PopBrowse
