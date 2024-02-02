@@ -6,7 +6,15 @@ import RenderPopNewCard from './components/popups/PopNewCard/PopNewCard'
 import PopBrowse from './components/popups/PopBrowse/PopBrowse'
 import Main from './components/Main/Main/Main'
 import Column from './components/Main/Column/Column'
+import { cardList } from './data'
 
+const statusList = [
+  "Без статуса",
+  "Нужно сделать",
+  "В работе",
+  "Тестирование",
+  "Готово",
+];
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,11 +32,18 @@ function App() {
         }
         <Header />
         <Main>
-          <Column name={"Без статуса"} />
-          <Column name={"Нужно сделать"} />
-          <Column name={"В работе"} />
-          <Column name={"Тестирование"} />
-          <Column name={"Готово"} />
+          {statusList.map((status) =>
+            <Column
+              name={status}
+              key={status}
+              cardList={cardList.filter((card) => card.status === status)} />)}
+          {
+            //<Column name={"Без статуса"} />
+            //<Column name={"Нужно сделать"} />
+            //<Column name={"В работе"} />
+            //<Column name={"Тестирование"} />
+            //<Column name={"Готово"} />
+          }
         </Main>
       </div>
 
