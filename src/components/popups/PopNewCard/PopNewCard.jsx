@@ -1,5 +1,5 @@
 
-function RenderPopNewCard() {
+function PopNewCard() {
     return (<div className="pop-new-card" id="popNewCard">
         <div className="pop-new-card__container">
             <div className="pop-new-card__block">
@@ -113,4 +113,4 @@ function RenderPopNewCard() {
     )
 }
 
-export default RenderPopNewCard
+export default PopNewCard
