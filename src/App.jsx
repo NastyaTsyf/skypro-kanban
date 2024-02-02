@@ -17,7 +17,18 @@ const statusList = [
 ];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cards, setCards] = useState(cardList)
+  function addCard() {
+    const newCard =
+    {
+      id: cards.length + 1,
+      theme: "Web Design",
+      title: "Новая задача",
+      date: "30.10.23",
+      status: "Без статуса",
+    };
+    setCards([...cards, newCard])
+  }
   return (
     <>
       <div className="wrapper">
@@ -30,20 +41,13 @@ function App() {
         {
           //<!-- pop-up end-->
         }
-        <Header />
+        <Header addCard={addCard} />
         <Main>
           {statusList.map((status) =>
             <Column
               name={status}
               key={status}
-              cardList={cardList.filter((card) => card.status === status)} />)}
-          {
-            //<Column name={"Без статуса"} />
-            //<Column name={"Нужно сделать"} />
-            //<Column name={"В работе"} />
-            //<Column name={"Тестирование"} />
-            //<Column name={"Готово"} />
-          }
+              cardList={cards.filter((card) => card.status === status)} />)}
         </Main>
       </div>
 
