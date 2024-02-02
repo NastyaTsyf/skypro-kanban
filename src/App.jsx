@@ -5,7 +5,7 @@ import PopExit from './components/popups/PopExit/PopExit'
 import PopNewCard from './components/popups/PopNewCard/PopNewCard'
 import PopBrowse from './components/popups/PopBrowse/PopBrowse'
 import MainContent from './components/Main/MainContent/MainContent'
-import Column from './components/Main/Column/Column'
+import Column from './components/Column/Column'
 import { cardList } from './data'
 
 const statusList = [
