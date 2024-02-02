@@ -1,3 +1,4 @@
+
 import Cards from "../Cards/Cards"
 import CardsItem from "../CardsItem/CardsItem"
 
@@ -14,6 +15,7 @@ function Column({ name, cardList }) {
                 <CardsItem />
                 <CardsItem />
                 <CardsItem />*/}
+
             </Cards>
         </div>
     )
