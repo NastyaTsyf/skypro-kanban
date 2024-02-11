@@ -1,5 +1,5 @@
 
-function Main({children}) {
+function MainContent({children}) {
     return (
         <main className="main">
             <div className="container">
@@ -13,5 +13,5 @@ function Main({children}) {
     )
 }
 
-export default Main
+export default MainContent
 
