@@ -1,15 +1,16 @@
 
+import * as S from "./CardsItem.Styled"
+import { topicHeader } from "../../lib/topic"
 
-function CardsItem({topic, title, date}) {
+function CardsItem({ topic, title, date }) {
 
     return (
         <div className="cards__item">
             <div className="cards__card card">
                 <div className="card__group">
-                    <div className="card__theme _orange">
-                        <p className="_orange">{topic}</p>
-
-                    </div>
+                    <S.CardTopic $themeColor={topicHeader[topic]}>
+                        <S.TopicText>{topic}</S.TopicText>
+                    </S.CardTopic>
                     <a href="#popBrowse" target="_self">
                         <div className="card__btn">
                             <div></div>
