@@ -1,13 +1,14 @@
 
 import Cards from "../Cards/Cards"
 import CardsItem from "../CardsItem/CardsItem"
+import * as S from './Column.Styled';
 
 function Column({ name, cardList }) {
     return (
-        <div className="main__column column">
-            <div className="column__title">
+        <S.StyledColumn>
+            <S.ColumnTitle>
                 <p>{name}</p>
-            </div>
+            </S.ColumnTitle>
             <Cards>
                 {cardList.map((card) => <CardsItem topic={card.theme} title={card.title} date={card.date} key={card.id} />)}
 
@@ -17,7 +18,7 @@ function Column({ name, cardList }) {
                 <CardsItem />*/}
 
             </Cards>
-        </div>
+        </S.StyledColumn>
     )
 }
 
