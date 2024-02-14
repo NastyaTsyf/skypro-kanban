@@ -7,6 +7,7 @@ import PopBrowse from './components/popups/PopBrowse/PopBrowse'
 import MainContent from './components/Main/MainContent/MainContent'
 import Column from './components/Column/Column'
 import { cardList } from './data'
+import * as S from './App.Styled';
 
 const statusList = [
   "Без статуса",
@@ -39,7 +40,7 @@ function App() {
   }
   return (
     <>
-      <div className="wrapper">
+      <S.Wrapper>
         {
           //<!-- pop-up start-->
         }
@@ -58,7 +59,7 @@ function App() {
               cardList={cards.filter((card) => card.status === status)} />)}
         </MainContent>)}
 
-      </div>
+      </S.Wrapper>
 
       <script src="js/script.js"></script>
     </>

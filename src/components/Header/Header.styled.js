@@ -41,6 +41,9 @@ export const HeaderBtnMainNew = styled.button`
   &:hover {
     background-color: #33399b;
   }
+  a {
+  color: #FFFFFF;
+}
 `;
 
 export const HeaderUser = styled.div`
