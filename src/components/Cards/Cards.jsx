@@ -1,9 +1,10 @@
+import * as S from "./Cards.Styled"
 
 function Cards({ children }) {
     return (
-        <div className="cards">
+        <S.StyledCards>
             {children}
-        </div>
+        </S.StyledCards>
     )
 }
 
