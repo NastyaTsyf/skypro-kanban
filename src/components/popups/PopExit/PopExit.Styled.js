@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledPopExit = styled.div`
-  display: none;
+  display: block;
   width: 100%;
   height: 100%;
   min-width: 320px;
@@ -59,7 +59,7 @@ export const PopExitFormGroup = styled.div`
   justify-content: space-between;
 `;
 
-export const PopExitYes = styled.button`
+export const PopExitYes = styled.span`
   width: 153px;
   height: 30px;
   background-color: #565EEF;
@@ -88,7 +88,7 @@ export const PopExitYes = styled.button`
     }
 `;
 
-export const PopExitNo = styled.button`
+export const PopExitNo = styled.span`
   width: 153px;
   height: 30px;
   background-color: transparent;

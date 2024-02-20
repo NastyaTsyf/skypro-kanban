@@ -10,13 +10,7 @@ function Column({ name, cardList }) {
                 <p>{name}</p>
             </S.ColumnTitle>
             <Cards>
-                {cardList.map((card) => <CardsItem topic={card.theme} title={card.title} date={card.date} key={card.id} />)}
-
-                {/*<CardsItem />
-                <CardsItem />
-                <CardsItem />
-                <CardsItem />*/}
-
+                {cardList.map((card) => <CardsItem topic={card.theme} title={card.title} date={card.date} key={card.id} id={card.id}/>)}
             </Cards>
         </S.StyledColumn>
     )
