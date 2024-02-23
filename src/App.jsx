@@ -11,7 +11,7 @@ import TaskPage from './pages/TaskPage/TaskPage.jsx';
 import ExitPage from './pages/ExitPage/ExitPage.jsx';
 
 export default function App() {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState(null)
   const navigate = useNavigate()
 
   function login(newUser) {
@@ -27,10 +27,9 @@ export default function App() {
   return (
     <Routes>
       <Route element={<PrivateRoute user={user} />}>
-        <Route path={appRoutes.MAIN} element={<MainPage user={user} />}>
-          <Route path={appRoutes.TASK} element={<TaskPage />} />
-          <Route path={appRoutes.EXIT} element={<ExitPage logout={logout} />} />
-        </Route>
+        <Route path={appRoutes.MAIN} element={<MainPage user={user} />} />
+        <Route path={appRoutes.TASK} element={<TaskPage />} />
+        <Route path={appRoutes.EXIT} element={<ExitPage logout={logout} />} />
       </Route>
       <Route path={appRoutes.SIGNIN} element={<Signin login={login} />} />
       <Route path={appRoutes.SIGNUP} element={<Signup />} />
