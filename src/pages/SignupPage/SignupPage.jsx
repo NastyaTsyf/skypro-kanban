@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { appRoutes } from "../../lib/appRoutes";
+import './SignupPage.css'
 
 export default function Signup() {
     return (

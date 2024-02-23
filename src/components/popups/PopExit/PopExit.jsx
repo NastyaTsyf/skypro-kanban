@@ -3,9 +3,9 @@ import * as S from './PopExit.Styled';
 import { appRoutes } from '../../../lib/appRoutes';
 
 function PopExit(logout) {
-    const handleExit = async (e) => {
+    const handleExit = (e) => {
         e.preventDefault();
-        await logout()
+        logout()
     }
     return (<S.StyledPopExit id="popExit">
         <S.PopExitContainer>

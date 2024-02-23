@@ -2,6 +2,10 @@ import { Link } from "react-router-dom"
 import { appRoutes } from "../../lib/appRoutes"
 import { useState } from "react"
 import { signIn } from "../../api";
+import './SigninPage.css'
+import { Wrapper } from "../../styled/common/common.styled";
+
+
 
 function Signin({ login }) {
     const [loginData, setLoginData] = useState({
@@ -10,21 +14,21 @@ function Signin({ login }) {
     })
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target; // Извлекаем имя поля и его значение
+        const { name, value } = e.target;
 
         setLoginData({
-            ...loginData, // Копируем текущие данные из состояния
-            [name]: value, // Обновляем нужное поле
+            ...loginData,
+            [name]: value,
         });
     };
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        await signIn(loginData).then((data)=>{login(data.user)})
+        await signIn(loginData).then((data) => { login(data.user) })
     }
 
     return (
-        <div className="wrapper">
+        <Wrapper>
             <div className="container-signin">
                 <div className="modal">
                     <div className="modal__block">
@@ -48,9 +52,7 @@ function Signin({ login }) {
                                 name="password"
                                 id="formpassword"
                                 placeholder="Пароль" />
-
-                                <button onClick={handleLogin} className="modal__btn-enter _hover01" id="btnEnter">Войти</button>
-
+                            <button onClick={handleLogin} className="modal__btn-enter _hover01" id="btnEnter">Войти</button>
                             <div className="modal__form-group">
                                 <p>Нужно зарегистрироваться?</p>
                                 <Link to={appRoutes.SIGNUP}>
@@ -61,7 +63,7 @@ function Signin({ login }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Wrapper>
     )
 }
 
