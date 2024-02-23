@@ -1,8 +1,12 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as S from './PopExit.Styled';
 import { appRoutes } from '../../../lib/appRoutes';
 
 function PopExit(logout) {
+    const handleExit = async (e) => {
+        e.preventDefault();
+        await logout()
+    }
     return (<S.StyledPopExit id="popExit">
         <S.PopExitContainer>
             <S.PopExitBlock>
@@ -11,11 +15,9 @@ function PopExit(logout) {
                 </S.PopExitTtl>
                 <S.PopExitForm id="formExit" action="#">
                     <S.PopExitFormGroup>
-                        <Link to={appRoutes.SIGNIN}>
-                            <S.PopExitYes onClick={logout} id="exitYes">Да, выйти</S.PopExitYes>
-                        </Link>
+                        <S.PopExitYes onClick={handleExit} id="exitYes">Да, выйти</S.PopExitYes>
                         <Link to={appRoutes.MAIN}>
-                            <S.PopExitNo id="exitNo"><a href="main.html">Нет, остаться</a> </S.PopExitNo>
+                            <S.PopExitNo id="exitNo">Нет, остаться</S.PopExitNo>
                         </Link>
                     </S.PopExitFormGroup>
                 </S.PopExitForm>

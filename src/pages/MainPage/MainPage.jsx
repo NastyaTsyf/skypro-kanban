@@ -3,8 +3,8 @@ import Header from '../../components/Header/Header'
 import MainContent from '../../components/Main/MainContent/MainContent'
 import Column from '../../components/Column/Column'
 import * as S from './MainPage.Styled';
-import { cardList } from '../../data'
 import { Outlet } from 'react-router-dom'
+import { getTodos } from '../../api';
 
 
 
@@ -16,15 +16,18 @@ const statusList = [
   "Готово",
 ];
 
-export default function MainPage() {
-  const [cards, setCards] = useState(cardList)
+export default function MainPage({ user }) {
+  const [cards, setCards] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
+    getTodos({ token: user.token }).then((todos) => {
+      console.log(todos)
+      setCards(todos.tasks)
+      setIsLoading(false)
+    }).catch((error)=>{alert(error)})
+
+  },[user]);
 
   function addCard() {
     const newCard =

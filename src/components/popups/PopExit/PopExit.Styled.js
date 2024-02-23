@@ -88,7 +88,7 @@ export const PopExitYes = styled.span`
     }
 `;
 
-export const PopExitNo = styled.span`
+export const PopExitNo = styled.button`
   width: 153px;
   height: 30px;
   background-color: transparent;
