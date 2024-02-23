@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import * as S from './PopUserSet.Styled';
+import { appRoutes } from '../../../lib/appRoutes';
 function PopUserSet() {
 	return (<S.HeaderPopUserSet id="user-set-target">
 		<S.PopUserSetName>Ivan Ivanov</S.PopUserSetName>
@@ -7,7 +9,9 @@ function PopUserSet() {
 			<p>Темная тема</p>
 			<input type="checkbox" className="checkbox" name="checkbox"></input>
 		</S.PopUserSetTheme>
-		<button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
+		<Link to={appRoutes.EXIT}>
+			<span className="_hover03">Выйти</span>
+		</Link>
 	</S.HeaderPopUserSet>
 	)
 }
