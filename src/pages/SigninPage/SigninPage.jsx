@@ -7,7 +7,7 @@ import { Wrapper } from "../../styled/common/common.styled";
 
 
 
-function Signin({ login }) {
+function Signin ({ login }) {
     const [loginData, setLoginData] = useState({
         login: "",
         password: ""
