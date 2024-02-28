@@ -19,7 +19,7 @@ export default function Signup() {
                             <div className="modal__form-group">
                                 <p>Уже есть аккаунт?
                                     <Link to={appRoutes.SIGNIN}>
-                                        <span>Войдите здесь</span>
+                                        Войдите здесь
                                     </Link>
                                 </p>
                             </div>

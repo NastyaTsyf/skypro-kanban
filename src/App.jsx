@@ -14,7 +14,7 @@ export default function App() {
   const [user, setUser] = useState(null)
   const navigate = useNavigate()
 
-  function login({ newUser }) {
+  function login(newUser) {
     setUser(newUser)
     navigate(appRoutes.MAIN)
   }
@@ -31,8 +31,8 @@ export default function App() {
           <Route path={appRoutes.TASK} element={<TaskPage />} />
           <Route path={appRoutes.EXIT} element={<ExitPage logout={logout} />} />
         </Route>
-
       </Route>
+
       <Route path={appRoutes.SIGNIN} element={<Signin login={login} />} />
       <Route path={appRoutes.SIGNUP} element={<Signup />} />
       <Route path={appRoutes.NOT_FOUND} element={<NotFound />} />

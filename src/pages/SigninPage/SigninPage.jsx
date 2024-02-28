@@ -7,7 +7,7 @@ import { Wrapper } from "../../styled/common/common.styled";
 
 
 
-function Signin ({ login }) {
+function Signin({ login }) {
     const [loginData, setLoginData] = useState({
         login: "",
         password: ""
@@ -20,11 +20,11 @@ function Signin ({ login }) {
             ...loginData,
             [name]: value,
         });
-    };
+    }; 
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        await signIn(loginData).then((data) => { login(data.user) })
+        await signIn(loginData).then((data) => { login({ newUser: data.user }) })
     }
 
     return (
@@ -56,7 +56,7 @@ function Signin ({ login }) {
                             <div className="modal__form-group">
                                 <p>Нужно зарегистрироваться?</p>
                                 <Link to={appRoutes.SIGNUP}>
-                                    <span>Регистрируйтесь здесь</span>
+                                    Регистрируйтесь здесь
                                 </Link>
                             </div>
                         </div>
