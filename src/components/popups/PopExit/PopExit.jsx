@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import * as S from './PopExit.Styled';
 import { appRoutes } from '../../../lib/appRoutes';
 
-function PopExit({logout}) {
+function PopExit({ logout }) {
     const handleExit = (e) => {
         e.preventDefault();
         logout()
