@@ -33,3 +33,21 @@ export function signIn({ login, password }) {
         return response.json();
     });
 }
+
+//Зарегистрироваться
+
+export function signUp({ login, name, password }) {
+    return fetch(userHost, {
+        method: "POST",
+        body: JSON.stringify({
+            login,
+            name,
+            password,
+        }),
+    }).then((response) => {
+        if (response.status === 400) {
+            throw new Error("Такой пользователь уже существует");
+        }
+        return response.json();
+    });
+}

@@ -59,7 +59,7 @@ export const PopExitFormGroup = styled.div`
   justify-content: space-between;
 `;
 
-export const PopExitYes = styled.span`
+export const PopExitYes = styled.button`
   width: 153px;
   height: 30px;
   background-color: #565EEF;

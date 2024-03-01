@@ -25,6 +25,12 @@ export default function App() {
     setUser(null)
     navigate(appRoutes.SIGNIN)
   }
+  
+  function register(newUser) {
+    setUser(newUser)
+    navigate(appRoutes.MAIN)
+  }
+  
 
 
   return (
@@ -36,7 +42,7 @@ export default function App() {
         </Route>
       </Route>
       <Route path={appRoutes.SIGNIN} element={<Signin login={login}/>}/>
-      <Route path={appRoutes.SIGNUP} element={<Signup/>}/>
+      <Route path={appRoutes.SIGNUP} element={<Signup register={register}/>}/>
       <Route path={appRoutes.NOT_FOUND} element={<NotFound/>}/>
     </Routes>
   )
