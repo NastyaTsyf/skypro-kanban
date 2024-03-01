@@ -19,12 +19,12 @@ export function signIn({ login, password }) {
 
 //Получение задач
 export async function getTodos({ token }) {
-    const response = await fetch(userHost, {
+    const response = await fetch(baseHost, {
         headers: {
             Authorization: `Bearer ${token}`
         }
     })
-    if (response.status === 200) {
+    if (!response.status === 200) {
         throw new Error("Ошибка")
     }
     const data = await response.json();
