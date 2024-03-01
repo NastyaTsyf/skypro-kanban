@@ -5,6 +5,7 @@ import Column from '../../components/Column/Column'
 import * as S from './MainPage.Styled';
 import { cardList } from '../../data'
 import { Outlet } from 'react-router-dom'
+import { getTodos } from '../../api';
 
 
 
@@ -17,10 +18,14 @@ const statusList = [
 ];
 
 export default function MainPage() {
-  const [cards, setCards] = useState(cardList)
+  const [cards, setCards] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    //getTodos().then((todos) => {
+    //  console.log(todos)
+    //  setCards(todos.todos)
+   // })
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);

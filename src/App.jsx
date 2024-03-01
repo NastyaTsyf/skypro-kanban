@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Routes,Route, useNavigate } from "react-router-dom";
 import { appRoutes } from "./lib/appRoutes";
 import Signin from './pages/SigninPage/SigninPage';
@@ -13,16 +13,16 @@ import ExitPage from './pages/ExitPage/ExitPage.jsx';
 
 
 export default function App() {
-  const[user, setUser] = useState(true)
-  const navigate = useNavigate
+  const[user, setUser] = useState(null)
+  const navigate = useNavigate()
 
-  function login() {
-    setUser(true)
+  function login(newUser) {
+    setUser(newUser)
     navigate(appRoutes.MAIN)
   }
 
   function logout() {
-    setUser(false)
+    setUser(null)
     navigate(appRoutes.SIGNIN)
   }
 

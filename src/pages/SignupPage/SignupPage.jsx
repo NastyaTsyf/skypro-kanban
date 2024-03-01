@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom"
+import "./SignupPage.css"
+import { appRoutes } from "../../lib/appRoutes"
+
 function Signup() {
     return (
         <div className="wrapper">
@@ -13,7 +17,7 @@ function Signup() {
 						<input className="modal__input password-first" type="password" name="password" id="passwordFirst" placeholder="Пароль"/>
 						<button className="modal__btn-signup-ent _hover01" id="SignUpEnter"><a href="../main.html">Зарегистрироваться</a> </button>
 						<div className="modal__form-group">
-							<p>Уже есть аккаунт?  <a href="signin.html">Войдите здесь</a></p>
+							<p>Уже есть аккаунт?  <Link to={appRoutes.SIGNIN}>Войдите здесь</Link></p>
 						</div>
 					</form>
 				</div>
