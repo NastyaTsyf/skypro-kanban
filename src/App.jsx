@@ -30,7 +30,7 @@ export default function App() {
   return (
     <Routes>
       <Route element={<PrivateRoute user={user}/>}>
-        <Route path={appRoutes.MAIN} element={<MainPage/>}>
+        <Route path={appRoutes.MAIN} element={<MainPage user={user}/>}>
           <Route path={appRoutes.TASK} element={<TaskPage/>}/>
           <Route path={appRoutes.EXIT} element={<ExitPage logout={logout}/>}/>
         </Route>
