@@ -1,7 +1,10 @@
+
 import { Container } from "../../../styled/common/common.styled"
 import * as S from './MainContent.Styled';
 
 function MainContent({children}) {
+
+
     return (
         <S.Main>
             <Container>
