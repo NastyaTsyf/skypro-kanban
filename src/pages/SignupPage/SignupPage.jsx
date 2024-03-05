@@ -1,16 +1,18 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./SignupPage.css"
 import { appRoutes } from "../../lib/appRoutes"
 import { useState } from "react";
 import { signUp } from "../../api";
+import { useUser } from "../../hooks/useUser";
 
-function Signup({register}) {
+function Signup() {
+    const {login} = useUser()
+    const navigate = useNavigate()
     const [registerData, setRegisterData] = useState({
         login: '',
         name: '',
         password: ''
     })
-
     const handleInputChange = (e) => {
         const { name, value } = e.target; // Извлекаем имя поля и его значение
 
@@ -19,11 +21,12 @@ function Signup({register}) {
             [name]: value, // Обновляем нужное поле
         });
     };
-
     const handleRegister = async (e) => {
         e.preventDefault()
-        await signUp(registerData).then((data) => {register(data.user)})
-        
+        await signUp(registerData).then((data) => {
+            login(data.user)
+            navigate(appRoutes.MAIN)
+        })
     }
 
     return (

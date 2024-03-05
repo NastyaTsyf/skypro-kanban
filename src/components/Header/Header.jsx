@@ -3,8 +3,10 @@ import { useState } from 'react';
 import PopUserSet from "../popups/PopUserSet/PopUserSet"
 import * as S from './Header.styled';
 import { Container } from '../../styled/common/common.styled';
+import { Link } from 'react-router-dom';
+import { appRoutes } from '../../lib/appRoutes';
 
-function Header({addCard}) {
+function Header() {
     const [isOpened, setIsOpened] = useState(false)
     function togglePopup() {
         setIsOpened((prev) => !prev)
@@ -19,7 +21,9 @@ function Header({addCard}) {
                     <a href="" target="_self"><img src="/logo_dark.png" alt="logo"></img></a>
                 </S.HeaderLogoDark>
                 <S.HeaderNav>
-                    <S.HeaderBtnMainNew id="btnMainNew" onClick={addCard}>Создать новую задачу</S.HeaderBtnMainNew>
+                    <Link to={appRoutes.NEWCARD}>
+                        <S.HeaderBtnMainNew id="btnMainNew" >Создать новую задачу</S.HeaderBtnMainNew>
+                    </Link>
                     <S.HeaderUser onClick={togglePopup}>Ivan Ivanov</S.HeaderUser>
                     {isOpened && (<PopUserSet />)}
                 </S.HeaderNav>

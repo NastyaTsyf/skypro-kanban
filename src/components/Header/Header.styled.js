@@ -27,7 +27,7 @@ export const HeaderNav = styled.nav`
   justify-content: center;
 `;
 
-export const HeaderBtnMainNew = styled.button`
+export const HeaderBtnMainNew = styled.span`
   width: 178px;
   height: 30px;
   border-radius: 4px;

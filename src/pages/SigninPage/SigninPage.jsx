@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { appRoutes } from "../../lib/appRoutes"
 import "./SigninPage.css"
 import { useState } from "react"
 import { signIn } from "../../api"
+import { useUser } from "../../hooks/useUser"
 
-function Signin({ login }) {
+function Signin() {
+    const {login} = useUser()
+    const navigate = useNavigate()
+
     const [loginData, setLoginData] = useState({
         login: '',
         password: ''
@@ -21,10 +25,11 @@ function Signin({ login }) {
 
     const handleLogin = async (e) => {
         e.preventDefault()
-        await signIn(loginData).then((data) => {login(data.user)})
-        
+        await signIn(loginData).then((data) => {
+            login(data.user)
+            navigate(appRoutes.MAIN)
+        }) 
     }
-
 
     return (
         <div className="wrapper">

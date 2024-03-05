@@ -5,6 +5,7 @@ import Column from '../../components/Column/Column'
 import * as S from './MainPage.Styled';
 import { Outlet } from 'react-router-dom'
 import { getTodos } from '../../api';
+import { useUser } from '../../hooks/useUser';
 
 
 
@@ -16,9 +17,10 @@ const statusList = [
   "Готово",
 ];
 
-export default function MainPage({user}) {
+export default function MainPage() {
   const [cards, setCards] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const {user} = useUser()
   useEffect(() => {
     getTodos({token: user.token}).then((todos) => {
       setCards(todos.tasks)
@@ -26,24 +28,13 @@ export default function MainPage({user}) {
     }).catch((error) => {alert(error)})
   }, [user]);
 
-  function addCard() {
-    const newCard =
-    {
-      id: cards.length + 1,
-      theme: "Web Design",
-      title: "Новая задача",
-      date: "30.10.23",
-      status: "Без статуса",
-    };
-    setCards([...cards, newCard])
-  }
   return (
     <>
       <S.Wrapper>
 
         <Outlet></Outlet>
 
-        <Header addCard={addCard} />
+        <Header/>
         {isLoading ? (<div>Загрузка...</div>) : (<MainContent>
           {statusList.map((status) =>
             <Column
