@@ -1,12 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as S from './PopExit.Styled';
 import { appRoutes } from '../../../lib/appRoutes';
+import { useUser } from '../../../hooks/useUser';
 
-function PopExit({ logout }) {
+function PopExit() {
+    const {logout} = useUser
+    const navigate = useNavigate()
+
     const handleLogout = (e) => {
         e.preventDefault
-        logout()
+        logout
+        navigate(appRoutes.SIGNIN)
     }
+
     return (<S.StyledPopExit id="popExit">
         <S.PopExitContainer>
             <S.PopExitBlock>
