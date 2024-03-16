@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { appRoutes } from "../../../lib/appRoutes";
 import { postTodo } from "../../../api";
 import { useUser } from "../../../hooks/useUser";
+import { useTasks } from "../../../hooks/useTasks";
 
 function PopNewCard() {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -13,6 +14,7 @@ function PopNewCard() {
         topic: '',
     })
     const {user} = useUser()
+    const {getTodosList} = useTasks()
 
     const navigate = useNavigate()
 
@@ -31,6 +33,7 @@ function PopNewCard() {
             ...newTask, date: selectedDate
         }
         await postTodo(user, taskData).then(() => {
+            getTodosList()
             navigate(appRoutes.MAIN)
         })
     }
