@@ -13,7 +13,8 @@ function PopExit() {
         navigate(appRoutes.SIGNIN)
     }
 
-    return (<S.StyledPopExit id="popExit">
+    return (
+    <S.StyledPopExit id="popExit">
         <S.PopExitContainer>
             <S.PopExitBlock>
                 <S.PopExitTtl>

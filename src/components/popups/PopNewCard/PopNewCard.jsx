@@ -5,6 +5,8 @@ import { appRoutes } from "../../../lib/appRoutes";
 import { postTodo } from "../../../api";
 import { useUser } from "../../../hooks/useUser";
 import { useTasks } from "../../../hooks/useTasks";
+import * as S from './PopNewCard.Styled';
+import { Categories, CategoriesSubTtl, CategoriesThemeGreen, CategoriesThemeOrange, CategoriesThemePurple, CategoriesThemes, SubTtl } from "../../../styled/common/common.styled";
 
 function PopNewCard() {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -13,8 +15,8 @@ function PopNewCard() {
         description: '',
         topic: '',
     })
-    const {user} = useUser()
-    const {getTodosList} = useTasks()
+    const { user } = useUser()
+    const { getTodosList } = useTasks()
 
     const navigate = useNavigate()
 
@@ -38,92 +40,82 @@ function PopNewCard() {
         })
     }
 
-    return (<div className="pop-new-card" id="popNewCard">
-        <div className="pop-new-card__container">
-            <div className="pop-new-card__block">
-                <div className="pop-new-card__content">
-                    <h3 className="pop-new-card__ttl">Создание задачи</h3>
-                    <Link to={appRoutes.MAIN}>
-                        <span className="pop-new-card__close">&#10006;</span>
-                    </Link>
-                    <div className="pop-new-card__wrap">
-                        <form className="pop-new-card__form form-new" id="formNewCard" action="#">
-                            <div className="form-new__block">
-                                <label htmlFor="formTitle" className="subttl">Название задачи</label>
-                                <input
-                                    className="form-new__input"
-                                    onChange={handleInputChange}
-                                    value={newTask.title}
-                                    type="text"
-                                    name="title"
-                                    id="formTitle"
-                                    placeholder="Введите название задачи..."
-                                    autoFocus>
-                                </input>
-                            </div>
-                            <div className="form-new__block">
-                                <label htmlFor="textArea" className="subttl">Описание задачи</label>
-                                <textarea
-                                    className="form-new__area"
-                                    onChange={handleInputChange}
-                                    value={newTask.description}
-                                    name="description"
-                                    id="textArea"
-                                    placeholder="Введите описание задачи...">
-                                </textarea>
-                            </div>
-                        </form>
-                        <Calendar selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-                    </div>
-                    <div className="pop-new-card__categories categories">
-                        <p className="categories__p subttl">Категория</p>
-                        <div className="prod_checbox">
-                            <div className="radio-toolbar">
-                                <input
-                                    type="radio"
-                                    id="radio1"
-                                    name="topic"
-                                    value="Web Design"
-                                    onChange={handleInputChange}
-                                />
-                                <label htmlFor="radio1">Web Design</label>
-
-                                <input
-                                    type="radio"
-                                    id="radio2"
-                                    name="topic"
-                                    value="Research"
-                                    onChange={handleInputChange}
-                                />
-                                <label htmlFor="radio2">Research</label>
-
-                                <input
-                                    type="radio"
-                                    id="radio3"
-                                    name="topic"
-                                    value="Copywriting"
-                                    onChange={handleInputChange}
-                                />
-                                <label htmlFor="radio3">Copywriting</label>
-                            </div>
-                        </div>
-                        {/*<div className="categories__themes">
-                            <div className="categories__theme _orange _active-category">
-                                <p className="_orange">Web Design</p>
-                            </div>
-                            <div className="categories__theme _green">
-                                <p className="_green">Research</p>
-                            </div>
-                            <div className="categories__theme _purple">
-                                <p className="_purple">Copywriting</p>
-                            </div>
-</div>*/}
-                    </div>
-                    <button onClick={handleFormSubmit} className="form-new__create _hover01" id="btnCreate">Создать задачу</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    return (
+        <S.StyledPopNewCard id="popNewCard">
+            <S.PopNewCardContainer>
+                <S.PopNewCardBlock>
+                    <S.PopNewCardContent>
+                        <S.PopNewCardTtl>Создание задачи</S.PopNewCardTtl>
+                        <Link to={appRoutes.MAIN}>
+                            <S.PopNewCardClose>&#10006;</S.PopNewCardClose>
+                        </Link>
+                        <S.PopNewCardWrap>
+                            <S.PopNewCardForm id="formNewCard" action="#">
+                                <S.FormNewBlock>
+                                    <SubTtl htmlFor="formTitle" >Название задачи</SubTtl>
+                                    <S.FormNewInput
+                                        onChange={handleInputChange}
+                                        value={newTask.title}
+                                        type="text"
+                                        name="title"
+                                        id="formTitle"
+                                        placeholder="Введите название задачи..."
+                                        autoFocus>
+                                    </S.FormNewInput>
+                                </S.FormNewBlock>
+                                <S.FormNewBlock>
+                                    <SubTtl htmlFor="textArea">Описание задачи</SubTtl>
+                                    <S.FormNewArea
+                                        onChange={handleInputChange}
+                                        value={newTask.description}
+                                        name="description"
+                                        id="textArea"
+                                        placeholder="Введите описание задачи...">
+                                    </S.FormNewArea>
+                                </S.FormNewBlock>
+                            </S.PopNewCardForm>
+                            <Calendar selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                        </S.PopNewCardWrap>
+                        <Categories>
+                            <CategoriesSubTtl>Категория</CategoriesSubTtl>
+                            <CategoriesThemes>
+                                <CategoriesThemeOrange>
+                                    <input
+                                        type="radio"
+                                        id="radio1"
+                                        name="topic"
+                                        value="Web Design"
+                                        onChange={handleInputChange}
+                                    />
+                                    <label className="_orange" htmlFor="radio1">Web Design</label>
+                                </CategoriesThemeOrange>
+                                <CategoriesThemeGreen>
+                                    <input
+                                        type="radio"
+                                        id="radio2"
+                                        name="topic"
+                                        value="Research"
+                                        onChange={handleInputChange}
+                                    />
+                                    <label className="_orange" htmlFor="radio2">Research</label>
+                                </CategoriesThemeGreen>
+                                <CategoriesThemePurple>
+                                    <input
+                                        type="radio"
+                                        id="radio3"
+                                        name="topic"
+                                        value="Copywriting"
+                                        onChange={handleInputChange}
+                                    />
+                                    <label className="_orange" htmlFor="radio3">Copywriting</label>
+                                </CategoriesThemePurple>
+                            </CategoriesThemes>
+                        </Categories>
+                        <S.FormNewCreate onClick={handleFormSubmit} id="btnCreate">Создать задачу</S.FormNewCreate>
+                    </S.PopNewCardContent>
+                </S.PopNewCardBlock>
+            </S.PopNewCardContainer>
+        </S.StyledPopNewCard>
     )
 }
 

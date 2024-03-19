@@ -1,9 +1,21 @@
 import styled from 'styled-components';
 import { topicStyles } from '../../lib/topic';
+import { keyframes } from 'styled-components';
+
+const cardAnimation  = keyframes`
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: auto;
+    opacity: 1;
+  }
+`;
 
 export const StyledCardsItem = styled.div`
   padding: 5px;
-  animation-name: card-animation;
+  animation-name: ${cardAnimation};
   animation-duration: 500ms;
   animation-timing-function: linear;
 `;
