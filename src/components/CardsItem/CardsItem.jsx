@@ -3,6 +3,7 @@ import * as S from "./CardsItem.Styled"
 import { topicHeader } from "../../lib/topic"
 import { Link } from "react-router-dom"
 
+
 function CardsItem({ topic, title, date, id }) {
 
     return (
@@ -12,13 +13,13 @@ function CardsItem({ topic, title, date, id }) {
                     <S.CardTopic $themeColor={topicHeader[topic]}>
                         <S.TopicText>{topic}</S.TopicText>
                     </S.CardTopic>
-                    <a href="#popBrowse" target="_self">
+
                         <S.CardBtn>
                             <div></div>
                             <div></div>
                             <div></div>
                         </S.CardBtn>
-                    </a>
+
                 </S.CardGroup>
                 <S.CardContent>
                     <Link to={`task/${id}`}>

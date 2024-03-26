@@ -6,9 +6,9 @@ import ru from "date-fns/locale/ru";
 
 export default function Calendar({selectedDate, setSelectedDate}) {
 
-  let footer = <p>Пожалуйста выберете дату</p>;
+  let footer = <p>Выберете срок исполнения</p>;
   if (selectedDate) {
-    footer = <p>Вы выбрали {format(selectedDate, "PP", { locale: ru })}.</p>;
+    footer = <p>Срок исполнения {format(selectedDate, "PP", { locale: ru })}.</p>;
   }
   return (
     <DayPicker
@@ -19,3 +19,5 @@ export default function Calendar({selectedDate, setSelectedDate}) {
     />
   );
 }
+
+

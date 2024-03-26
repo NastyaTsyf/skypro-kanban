@@ -19,8 +19,7 @@ a:visited {
   cursor: pointer;
 }
 
-button,
-._btn {
+button {
   cursor: pointer;
   outline: none;
 }

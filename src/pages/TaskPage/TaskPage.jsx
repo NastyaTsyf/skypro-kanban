@@ -1,8 +1,8 @@
 import PopBrowse from "../../components/popups/PopBrowse/PopBrowse";
 
-export default function TaskPage() {
+export default function TaskPage({topic}) {
     return (
-        <PopBrowse/>
+        <PopBrowse topic={topic}/>
     )
 
 }

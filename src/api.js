@@ -74,3 +74,19 @@ export function signUp({ login, name, password }) {
         return response.json();
     });
 }
+
+//Удалить задачу
+
+export async function deleteTodo({id}, {token}) {
+    const response = await fetch(baseHost + `/${id}`, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+        method: 'DELETE',
+    }) 
+    if (!response.status === 201) {
+        throw new Error("ошибка!");
+    }
+    const data = await response.json();
+    return data
+}

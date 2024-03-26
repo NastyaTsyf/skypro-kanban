@@ -42,7 +42,11 @@ export const CategoriesTheme = styled.div`
   border-radius: 24px;
   margin-right: 7px;
   opacity: 0.4;
-  & label {
+
+`;
+
+export const CategoriesThemeContent = styled(CategoriesTheme)`
+& label {
   display: inline-block;
   width: auto;
   height: 30px;
@@ -63,9 +67,10 @@ export const CategoriesTheme = styled.div`
   & label:hover {
     opacity: 1 !important;
   }
+
 `;
 
-export const CategoriesThemeOrange = styled(CategoriesTheme)`
+export const CategoriesThemeOrange = styled(CategoriesThemeContent)`
   & label {
   background-color: #FFE4C2;
   color: #FF6D00;
@@ -73,16 +78,18 @@ export const CategoriesThemeOrange = styled(CategoriesTheme)`
 
 `;
 
-export const CategoriesThemeGreen = styled(CategoriesTheme)`
+export const CategoriesThemeGreen = styled(CategoriesThemeContent)`
   & label {
     background-color: #B4FDD1;
     color: #06B16E}
 
 `;
 
-export const CategoriesThemePurple = styled(CategoriesTheme)`
+export const CategoriesThemePurple = styled(CategoriesThemeContent)`
   & label {
   background-color: #E9D4FF;
   color: #9A48F1;}
 `;
+
+
 

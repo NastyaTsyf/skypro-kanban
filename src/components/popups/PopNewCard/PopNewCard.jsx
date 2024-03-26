@@ -74,7 +74,7 @@ function PopNewCard() {
                                     </S.FormNewArea>
                                 </S.FormNewBlock>
                             </S.PopNewCardForm>
-                            <Calendar selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                            <Calendar selectedDate={selectedDate} setSelectedDate={setSelectedDate}/>
                         </S.PopNewCardWrap>
                         <Categories>
                             <CategoriesSubTtl>Категория</CategoriesSubTtl>
@@ -87,7 +87,7 @@ function PopNewCard() {
                                         value="Web Design"
                                         onChange={handleInputChange}
                                     />
-                                    <label className="_orange" htmlFor="radio1">Web Design</label>
+                                    <label htmlFor="radio1">Web Design</label>
                                 </CategoriesThemeOrange>
                                 <CategoriesThemeGreen>
                                     <input
@@ -97,7 +97,7 @@ function PopNewCard() {
                                         value="Research"
                                         onChange={handleInputChange}
                                     />
-                                    <label className="_orange" htmlFor="radio2">Research</label>
+                                    <label htmlFor="radio2">Research</label>
                                 </CategoriesThemeGreen>
                                 <CategoriesThemePurple>
                                     <input
@@ -107,7 +107,7 @@ function PopNewCard() {
                                         value="Copywriting"
                                         onChange={handleInputChange}
                                     />
-                                    <label className="_orange" htmlFor="radio3">Copywriting</label>
+                                    <label htmlFor="radio3">Copywriting</label>
                                 </CategoriesThemePurple>
                             </CategoriesThemes>
                         </Categories>
